@@ -1,8 +1,41 @@
 /* general */
-
+* {
+  /* border: solid teal 2px; */
+}
 /* body */
+body {
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  background-color: #bd65e0;
+}
+
 .click-option {
-  width: 10%;
-  height: 10%;
+  width: 100px;
+  height: 100px;
 }
 /* asides */
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+  background-color: #d07cf2;
+}
+
+.aside-text {
+  margin: 2px;
+}
