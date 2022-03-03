@@ -31,20 +31,24 @@ class Game {
 
   decideWinner() {
     for (var i = 0; i < classicRules.length; i++) {
-      if (this.players.human.turn === ) {
-
+      if (this.players.human.turn === this.classicRules[i].name && this.players.human.turn !== this.players.computer.turn) {
+        if (this.classRules[i].strongAgainst.includes(this.players.computer.turn)) {
+          console.log("Human is the winner!");
+        } else {
+          console.log("Computer is the winner!");
+        }
+      } else {
+        console.log("It's a draw!");
       }
     }
-    if (this.players.human.turn === "paper") {
-
-    }
-    if (this.players.human.turn === "scissors") {
-
-    }
-    this.players.human.turn
-    this.players.computer.turn
-    console.log(`${player} is the winner!`);
-    console.log("It's a draw!");
+    // if (this.players.human.turn === "paper") {
+    //
+    // }
+    // if (this.players.human.turn === "scissors") {
+    //
+    // }
+    // this.players.human.turn
+    // this.players.computer.turn
     // A way to check the Game’s board data for win conditions
 
     // A way to detect when a game is a draw (no one has won)
