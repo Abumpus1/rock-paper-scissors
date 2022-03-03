@@ -6,8 +6,8 @@ class Player {
     this.turn = null;
   }
 
-  takeTurn(turn) {
-    this.turn = turn;
+  takeTurn(weapon) {
+    this.turn = weapon;
     // return turn = "nope"; // maybe
   }
 

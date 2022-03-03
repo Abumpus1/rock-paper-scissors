@@ -1,6 +1,18 @@
 class Game {
   constructor() {
     this.gameType = null;
+    this.classicRules = {
+      rock: {strongAgainst: ["scissors"], weakAgainst: ["paper"]},
+      paper: {strongAgainst: ["rock"], weakAgainst: ["scissors"]},
+      scissors: {strongAgainst: ["paper"], weakAgainst: ["rock"]}
+    };
+    this.hardRules = {
+      rock: {strongAgainst: ["scissors", "lizard"], weakAgainst: ["paper", "alien"]},
+      paper: {strongAgainst: ["rock", "alien"], weakAgainst: ["scissors", "lizard"]},
+      scissors: {strongAgainst: ["paper", "lizard"], weakAgainst: ["rock", "alien"]},
+      lizard: {strongAgainst: ["paper", "alien"], weakAgainst: ["rock", "scissors"]},
+      alien: {strongAgainst: ["scissors", "rock"], weakAgainst: ["paper", "lizard"]}
+    };
     this.players = {
       human: new Player("human", "😀"),
       computer: new Player("computer", "💻")
@@ -18,7 +30,9 @@ class Game {
   }
 
   decideWinner() {
+    if (this.players.human.turn === rock) {
 
+    }
     this.players.human.turn
     this.players.computer.turn
     console.log(`${player} is the winner!`);
