@@ -5,7 +5,7 @@ class Player {
     this.wins = 0;
   }
 
-  takeTurn(selection) {
-    return turn = selection; // maybe
+  takeTurn() {
+    // return turn = "nope"; // maybe
   }
 }
