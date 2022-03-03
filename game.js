@@ -1,18 +1,18 @@
 class Game {
   constructor() {
     this.gameType = null;
-    this.classicRules = {
-      rock: {strongAgainst: ["scissors"], weakAgainst: ["paper"]},
-      paper: {strongAgainst: ["rock"], weakAgainst: ["scissors"]},
-      scissors: {strongAgainst: ["paper"], weakAgainst: ["rock"]}
-    };
-    this.hardRules = {
-      rock: {strongAgainst: ["scissors", "lizard"], weakAgainst: ["paper", "alien"]},
-      paper: {strongAgainst: ["rock", "alien"], weakAgainst: ["scissors", "lizard"]},
-      scissors: {strongAgainst: ["paper", "lizard"], weakAgainst: ["rock", "alien"]},
-      lizard: {strongAgainst: ["paper", "alien"], weakAgainst: ["rock", "scissors"]},
-      alien: {strongAgainst: ["scissors", "rock"], weakAgainst: ["paper", "lizard"]}
-    };
+    this.classicRules = [
+      {name: "rock", strongAgainst: ["scissors"], weakAgainst: ["paper"]},
+      {name: "paper", strongAgainst: ["rock"], weakAgainst: ["scissors"]},
+      {name: "scissors", strongAgainst: ["paper"], weakAgainst: ["rock"]}
+    ];
+    this.hardRules = [
+      {name: "rock", strongAgainst: ["scissors", "lizard"], weakAgainst: ["paper", "alien"]},
+      {name: "paper", strongAgainst: ["rock", "alien"], weakAgainst: ["scissors", "lizard"]},
+      {name: "scissors", strongAgainst: ["paper", "lizard"], weakAgainst: ["rock", "alien"]},
+      {name: "lizard", strongAgainst: ["paper", "alien"], weakAgainst: ["rock", "scissors"]},
+      {name: "alien", strongAgainst: ["scissors", "rock"], weakAgainst: ["paper", "lizard"]}
+    ];
     this.players = {
       human: new Player("human", "😀"),
       computer: new Player("computer", "💻")
@@ -30,7 +30,15 @@ class Game {
   }
 
   decideWinner() {
-    if (this.players.human.turn === rock) {
+    for (var i = 0; i < classicRules.length; i++) {
+      if (this.players.human.turn === ) {
+
+      }
+    }
+    if (this.players.human.turn === "paper") {
+
+    }
+    if (this.players.human.turn === "scissors") {
 
     }
     this.players.human.turn
