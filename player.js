@@ -3,9 +3,15 @@ class Player {
     this.name = playerName;
     this.token = token;
     this.wins = 0;
+    this.turn = null;
   }
 
-  takeTurn() {
+  takeTurn(turn) {
+    this.turn = turn;
     // return turn = "nope"; // maybe
+  }
+
+  takeRandomTurn() {
+
   }
 }

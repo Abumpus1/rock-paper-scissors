@@ -18,6 +18,11 @@ class Game {
   }
 
   decideWinner() {
+
+    this.players.human.turn
+    this.players.computer.turn
+    console.log(`${player} is the winner!`);
+    console.log("It's a draw!");
     // A way to check the Game’s board data for win conditions
 
     // A way to detect when a game is a draw (no one has won)
