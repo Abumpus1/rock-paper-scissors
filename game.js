@@ -25,16 +25,21 @@ class Game {
 
   takeTurns(weapon) {
     this.players.human.takeTurn(weapon)
-    this.players.computer.takeRandomTurn()
+    this.players.computer.takeRandomTurn(this.gameType)
     this.decideWinner()
   }
 
   decideWinner() {
+    if (this.gameType === "classic") {
+      var gameRules = this.classicRules
+    } else {
+      var gameRules = this.hardRules
+    }
     var playerTurn = this.players.human.turn;
     var computerTurn = this.players.computer.turn;
-    for (var i = 0; i < this.classicRules.length; i++) {
-      if (playerTurn === this.classicRules[i].name && playerTurn !== computerTurn) {
-        if (this.classicRules[i].strongAgainst.includes(computerTurn)) {
+    for (var i = 0; i < gameRules.length; i++) {
+      if (playerTurn === gameRules[i].name && playerTurn !== computerTurn) {
+        if (gameRules[i].strongAgainst.includes(computerTurn)) {
           console.log("Human won this round!");
           this.players.human.wins++;
           return;

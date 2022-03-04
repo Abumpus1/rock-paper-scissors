@@ -11,9 +11,13 @@ class Player {
     // return turn = "nope"; // maybe
   }
 
-  takeRandomTurn() {
-    var weapons = ["rock", "paper", "scissors"];
+  takeRandomTurn(gameType) {
+    if (gameType === "classic") {
+      var weapons = ["rock", "paper", "scissors"];
+    } else {
+      var weapons = ["rock", "paper", "scissors", "lizard", "alien"]
+    }
     this.turn = weapons[Math.floor(Math.random() * weapons.length)];
-    console.log(this.turn);
+    console.log("computer chose:", this.turn);
   }
 }
