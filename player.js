@@ -12,6 +12,8 @@ class Player {
   }
 
   takeRandomTurn() {
-
+    var weapons = ["rock", "paper", "scissors"];
+    this.turn = weapons[Math.floor(Math.random() * weapons.length)];
+    console.log(this.turn);
   }
 }

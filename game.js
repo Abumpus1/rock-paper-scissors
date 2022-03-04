@@ -28,17 +28,29 @@ class Game {
     // A way to keep track of the selected game type
     this.gameType = gameType;
   }
+  takeTurns(weapon) {
+    this.players.human.takeTurn(weapon)
+    this.players.computer.takeRandomTurn()
+    this.decideWinner()
+  }
 
   decideWinner() {
-    for (var i = 0; i < classicRules.length; i++) {
-      if (this.players.human.turn === this.classicRules[i].name && this.players.human.turn !== this.players.computer.turn) {
-        if (this.classRules[i].strongAgainst.includes(this.players.computer.turn)) {
-          console.log("Human is the winner!");
+    var playerTurn = this.players.human.turn;
+    var computerTurn = this.players.computer.turn;
+    for (var i = 0; i < this.classicRules.length; i++) {
+      if (playerTurn === this.classicRules[i].name && playerTurn !== computerTurn) {
+        if (this.classicRules[i].strongAgainst.includes(computerTurn)) {
+          console.log("Human won this round!");
+          this.players.human.wins++;
+          return;
         } else {
-          console.log("Computer is the winner!");
+          console.log("Computer won this round!");
+          this.players.computer.wins++;
+          return;
         }
-      } else {
+      } else if (playerTurn === computerTurn) {
         console.log("It's a draw!");
+        return;
       }
     }
     // if (this.players.human.turn === "paper") {
