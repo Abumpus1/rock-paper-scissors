@@ -2,32 +2,27 @@ class Game {
   constructor() {
     this.gameType = null;
     this.classicRules = [
-      {name: "rock", strongAgainst: ["scissors"], weakAgainst: ["paper"]},
-      {name: "paper", strongAgainst: ["rock"], weakAgainst: ["scissors"]},
-      {name: "scissors", strongAgainst: ["paper"], weakAgainst: ["rock"]}
+      {name: "rock", strongAgainst: ["scissors"]},
+      {name: "paper", strongAgainst: ["rock"]},
+      {name: "scissors", strongAgainst: ["paper"]}
     ];
     this.hardRules = [
-      {name: "rock", strongAgainst: ["scissors", "lizard"], weakAgainst: ["paper", "alien"]},
-      {name: "paper", strongAgainst: ["rock", "alien"], weakAgainst: ["scissors", "lizard"]},
-      {name: "scissors", strongAgainst: ["paper", "lizard"], weakAgainst: ["rock", "alien"]},
-      {name: "lizard", strongAgainst: ["paper", "alien"], weakAgainst: ["rock", "scissors"]},
-      {name: "alien", strongAgainst: ["scissors", "rock"], weakAgainst: ["paper", "lizard"]}
+      {name: "rock", strongAgainst: ["scissors", "lizard"]},
+      {name: "paper", strongAgainst: ["rock", "alien"]},
+      {name: "scissors", strongAgainst: ["paper", "lizard"]},
+      {name: "lizard", strongAgainst: ["paper", "alien"]},
+      {name: "alien", strongAgainst: ["scissors", "rock"]}
     ];
     this.players = {
       human: new Player("human", "😀"),
       computer: new Player("computer", "💻")
     };
-    // A way to keep track of the data for the game board
-    this.turns = {
-      humanTurn: this.players.human.takeTurn(),
-      computerTurn: this.players.computer.takeTurn()
-    }; // not sold on this
   }
 
   chooseGame(gameType) {
-    // A way to keep track of the selected game type
     this.gameType = gameType;
   }
+
   takeTurns(weapon) {
     this.players.human.takeTurn(weapon)
     this.players.computer.takeRandomTurn()
@@ -53,18 +48,6 @@ class Game {
         return;
       }
     }
-    // if (this.players.human.turn === "paper") {
-    //
-    // }
-    // if (this.players.human.turn === "scissors") {
-    //
-    // }
-    // this.players.human.turn
-    // this.players.computer.turn
-    // A way to check the Game’s board data for win conditions
-
-    // A way to detect when a game is a draw (no one has won)
-    // if inputs same, draw
   }
 
   resetBoard() {
