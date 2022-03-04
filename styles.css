@@ -15,6 +15,7 @@ body {
   display: flex;
 }
 
+
 /* main */
 main {
   display: flex;
@@ -43,7 +44,7 @@ main {
   font-weight: lighter;
 }
 
-.rock-paper-scissors-selection {
+.rock-paper-scissors-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,4 +71,9 @@ aside {
 
 .aside-text {
   margin: 2px;
+}
+
+/* hidden class */
+.hidden {
+  display: none;
 }

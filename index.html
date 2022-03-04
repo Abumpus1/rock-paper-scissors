@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles.css">
-    <title></title>
+    <title>Rock, Paper, Scissors!</title>
   </head>
   <body>
     <aside class="human-score-container">
       <h3 class="aside-text">😀</h3>
       <h3 class="aside-text">Human</h3>
-      <p class="aside-text">Wins: 0</p>
+      <p class="aside-text" id="humanWins">Wins: 0</p>
     </aside>
     <main>
       <div class="title-container">
         <h1>Rock, Paper, Scissors</h1>
         <h2>Choose your fighter!</h2>
       </div>
-      <section class="rock-paper-scissors-selection">
+      <section class="rock-paper-scissors-container">
         <img class="pick-option rock" src="./src/happy-rocks.png" alt="Image of rock">
         <img class="pick-option paper" src="./src/happy-paper.png" alt="Image of paper">
         <img class="pick-option scissors" src="./src/happy-scissors.png" alt="Image of scissors">
@@ -25,7 +25,7 @@
     <aside class="computer-score-container">
       <h3 class="aside-text">💻</h3>
       <h3 class="aside-text">Computer</h3>
-      <p class="aside-text">Wins: 0</p>
+      <p class="aside-text" id="computerWins">Wins: 0</p>
     </aside>
   </body>
   <script src="./player.js"></script>
