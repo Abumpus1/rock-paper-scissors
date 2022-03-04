@@ -38,18 +38,16 @@ class Game {
     var playerTurn = this.players.human.turn;
     var computerTurn = this.players.computer.turn;
     for (var i = 0; i < gameRules.length; i++) {
-      if (playerTurn === gameRules[i].name && playerTurn !== computerTurn) {
-        if (gameRules[i].strongAgainst.includes(computerTurn)) {
-          console.log("Human won this round!");
-          this.players.human.wins++;
-          return;
-        } else {
-          console.log("Computer won this round!");
-          this.players.computer.wins++;
-          return;
-        }
-      } else if (playerTurn === computerTurn) {
+      if (playerTurn === computerTurn) {
         console.log("It's a draw!");
+        return;
+      } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
+        console.log("Human won this round!");
+        this.players.human.wins++;
+        return;
+      } else if (playerTurn === gameRules[i].name) {
+        console.log("Computer won this round!");
+        this.players.computer.wins++;
         return;
       }
     }
