@@ -1,6 +1,11 @@
 class Game {
   constructor() {
     this.gameType = null;
+    this.outcome = "Placeholder";
+    this.players = {
+      human: new Player("human", "😀"),
+      computer: new Player("computer", "💻")
+    };
     this.classicRules = [
       {name: "rock", strongAgainst: ["scissors"]},
       {name: "paper", strongAgainst: ["rock"]},
@@ -13,10 +18,6 @@ class Game {
       {name: "lizard", strongAgainst: ["paper", "alien"]},
       {name: "alien", strongAgainst: ["scissors", "rock"]}
     ];
-    this.players = {
-      human: new Player("human", "😀"),
-      computer: new Player("computer", "💻")
-    };
   }
 
   chooseGame(gameType) {
@@ -24,9 +25,9 @@ class Game {
   }
 
   takeTurns(weapon) {
-    this.players.human.takeTurn(weapon)
-    this.players.computer.takeRandomTurn(this.gameType)
-    this.decideWinner()
+    this.players.human.takeTurn(weapon);
+    this.players.computer.takeRandomTurn(this.gameType);
+    this.decideWinner();
   }
 
   decideWinner() {
@@ -39,23 +40,14 @@ class Game {
     var computerTurn = this.players.computer.turn;
     for (var i = 0; i < gameRules.length; i++) {
       if (playerTurn === computerTurn) {
-        console.log("It's a draw!");
-        return;
+        return this.outcome = "😭 It's a draw! 😭";
       } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
-        console.log("Human won this round!");
         this.players.human.wins++;
-        return;
+        return this.outcome = "😃 Human won this round! 😃";
       } else if (playerTurn === gameRules[i].name) {
-        console.log("Computer won this round!");
         this.players.computer.wins++;
-        return;
+        return this.outcome = "💻 Computer won this round! 💻";
       }
     }
-  }
-
-  resetBoard() {
-    // A way to reset the Game’s board to begin a new game
-    // timeout for new choice?
-
   }
 }
