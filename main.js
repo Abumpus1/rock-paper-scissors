@@ -21,7 +21,7 @@ gameSelectContainer.addEventListener("click", function(event) {
 });
 selectionDisplaysContainer.addEventListener("click", function(event) {
   if (event.target.className === "pick-option") {
-    chooseWeapons(event.target.id);
+    chooseWeapons(event.target);
   }
 });
 
@@ -45,10 +45,14 @@ function chooseGame(gameSelected) {
 }
 
 function chooseWeapons(weapon) {
-  game.takeTurns(weapon);
-  humanWins.innerText = `Wins: ${game.players.human.wins}`;
-  computerWins.innerText = `Wins: ${game.players.computer.wins}`;
-  showOutcome()
+ weapon.classList.add("clicked");
+  setTimeout(function() {
+    weapon.classList.remove("clicked");
+    game.takeTurns(weapon.id);
+    humanWins.innerText = `Wins: ${game.players.human.wins}`;
+    computerWins.innerText = `Wins: ${game.players.computer.wins}`;
+    showOutcome()
+  }, 500)
 }
 
 function showOutcome() {
@@ -56,13 +60,13 @@ function showOutcome() {
   hide(selectionDisplaysContainer);
   show(outcomeDisplay);
   titleMessage.innerText = "THIS PERSON won this round!";
-  setTimeout(reset, 2000);
   var playerTurn = game.players.human.turn;
   var computerTurn = game.players.computer.turn;
   outcomeDisplay.innerHTML = `
-  <img class="pick-option" id="${playerTurn}" src="./src/${playerTurn}.png" alt="image of ${playerTurn}">
-  <img class="pick-option" id="${computerTurn}" src="./src/${computerTurn}.png" alt="image of ${computerTurn}">
+  <img class="display-option" id="${playerTurn}" src="./src/${playerTurn}.png" alt="image of ${playerTurn}">
+  <img class="display-option" id="${computerTurn}" src="./src/${computerTurn}.png" alt="image of ${computerTurn}">
   `
+  setTimeout(reset, 2000);
 }
 
 function reset() {

@@ -94,10 +94,34 @@ main {
   align-items: center;
 }
 
-.pick-option {
+.pick-option, .display-option {
+  border: purple 10px;
+  border-radius: 10px;]
   margin: 20px;
   width: 200px;
   height: 200px;
+}
+
+.pick-option:hover {
+  cursor: pointer;
+  border: solid purple 10px;
+  border-radius: 50px;
+  width: 180px;
+  height: 180px;
+  transition: 280ms;
+}
+
+@keyframes grow-and-shrink {
+  0% {
+    transform: scale(1.10);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.clicked {
+  animation: grow-and-shrink 250ms;
 }
 
 /* outcome display */

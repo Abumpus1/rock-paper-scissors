@@ -8,7 +8,6 @@ class Player {
 
   takeTurn(weapon) {
     this.turn = weapon;
-    // return turn = "nope"; // maybe
   }
 
   takeRandomTurn(gameType) {
