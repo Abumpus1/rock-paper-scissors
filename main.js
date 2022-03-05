@@ -3,7 +3,7 @@ var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
 
-var selectionDisplaysContainer = document.querySelector(".selection-displays-container")
+var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
 var gameSelectContainer = document.querySelector(".game-select-container");
 var rockPaperScissorsContainer = document.querySelector(".rock-paper-scissors-container");
 var lizardAlienContainer = document.querySelector(".lizard-alien-container");
