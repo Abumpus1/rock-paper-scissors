@@ -44,6 +44,7 @@ main {
   font-weight: lighter;
 }
 
+/* game select */
 .game-select-container {
   position: static;
   display: flex;
@@ -86,6 +87,7 @@ main {
   margin: 2px;
 }
 
+/* weapon select */
 .weapon-options {
   display: flex;
   justify-content: center;
@@ -96,6 +98,13 @@ main {
   margin: 20px;
   width: 200px;
   height: 200px;
+}
+
+/* outcome display */
+.outcome-display {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
 }
 
 /* asides */

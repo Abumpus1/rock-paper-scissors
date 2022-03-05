@@ -2,6 +2,9 @@
 var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
+var playerWeapon = document.querySelector(".player-weapon");
+var computerWeapon = document.querySelector(".computer-weapon");
+var titleMessage = document.querySelector(".title-message");
 
 var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
 var gameSelectContainer = document.querySelector(".game-select-container");
@@ -40,6 +43,7 @@ function chooseGame(gameSelected) {
   if (game.gameType === "hard") {
     show(lizardAlienContainer);
   }
+  titleMessage.innerText = "Choose your fighter!";
 }
 
 function chooseWeapons(weapon) {
@@ -52,10 +56,14 @@ function chooseWeapons(weapon) {
 function showOutcome() {
   hide(selectionDisplaysContainer);
   show(outcomeDisplay);
-  setTimeout(reset, 3000);
+  titleMessage.innerText = "THIS PERSON won this round!";
+  setTimeout(reset, 2000);
 }
 
 function reset() {
+  // playerWeapon.innerHTML =
+  // computerWeapon.innerHTML =
+  titleMessage.innerText = "Choose your fighter!";
   hide(outcomeDisplay);
   show(selectionDisplaysContainer);
 }
