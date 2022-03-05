@@ -3,6 +3,7 @@ var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
 var titleMessage = document.querySelector(".title-message");
+var changeGameButton = document.querySelector(".change-game");
 
 var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
 var gameSelectContainer = document.querySelector(".game-select-container");
@@ -24,6 +25,7 @@ selectionDisplaysContainer.addEventListener("click", function(event) {
     chooseWeapons(event.target);
   }
 });
+changeGameButton.addEventListener("click", goToMain);
 
 // functions
 function hide(element) {
@@ -32,6 +34,13 @@ function hide(element) {
 
 function show(element) {
   element.classList.remove("hidden");
+}
+
+function goToMain() {
+  hide(rockPaperScissorsContainer);
+  hide(lizardAlienContainer);
+  hide(changeGameButton);
+  show(gameSelectContainer);
 }
 
 function chooseGame(gameSelected) {
@@ -52,7 +61,7 @@ function chooseWeapons(weapon) {
     humanWins.innerText = `Wins: ${game.players.human.wins}`;
     computerWins.innerText = `Wins: ${game.players.computer.wins}`;
     showOutcome()
-  }, 500)
+  }, 300)
 }
 
 function showOutcome() {
@@ -71,6 +80,7 @@ function showOutcome() {
 
 function reset() {
   titleMessage.innerText = "Choose your fighter!";
+  show(changeGameButton);
   hide(outcomeDisplay);
   show(selectionDisplaysContainer);
 }

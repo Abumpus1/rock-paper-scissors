@@ -146,6 +146,23 @@ aside {
   margin: 2px;
 }
 
+.change-game {
+  margin-top: 70px;
+  font-size: 60%;
+  background: #AB49DA;
+  border: 0;
+  width: 160px;
+  height: 70px;
+}
+
+.change-game:hover {
+  color: #AB49DA;
+  background: white;
+  transition: 150ms;
+  width: 170px;
+  height: 75px;
+}
+
 /* hidden class */
 .hidden {
   display: none;
