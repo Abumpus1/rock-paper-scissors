@@ -2,8 +2,6 @@
 var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
-var playerWeapon = document.querySelector(".player-weapon");
-var computerWeapon = document.querySelector(".computer-weapon");
 var titleMessage = document.querySelector(".title-message");
 
 var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
@@ -54,15 +52,20 @@ function chooseWeapons(weapon) {
 }
 
 function showOutcome() {
+
   hide(selectionDisplaysContainer);
   show(outcomeDisplay);
   titleMessage.innerText = "THIS PERSON won this round!";
   setTimeout(reset, 2000);
+  var playerTurn = game.players.human.turn;
+  var computerTurn = game.players.computer.turn;
+  outcomeDisplay.innerHTML = `
+  <img class="pick-option" id="${playerTurn}" src="./src/${playerTurn}.png" alt="image of ${playerTurn}">
+  <img class="pick-option" id="${computerTurn}" src="./src/${computerTurn}.png" alt="image of ${computerTurn}">
+  `
 }
 
 function reset() {
-  // playerWeapon.innerHTML =
-  // computerWeapon.innerHTML =
   titleMessage.innerText = "Choose your fighter!";
   hide(outcomeDisplay);
   show(selectionDisplaysContainer);
