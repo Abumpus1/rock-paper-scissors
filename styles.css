@@ -22,7 +22,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   width: 70%;
-  background-color: #bd65e0;
+  background-color: #C76AF1;
 }
 
 .title-container{
@@ -37,18 +37,59 @@ main {
   margin: 0;
   font-size: 400%;
 }
+
 .title-container > h2 {
   margin: 0;
   font-size: 200%;
   font-weight: lighter;
 }
 
-.rock-paper-scissors-selection {
+.game-select-container {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 460px;
+}
+
+.game-option {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #AB49DA;
+  width: 300px;
+  height: 200px;
+}
+
+.game-option:hover {
+  background-color: white;
+  width: 310px;
+  height: 210px;
+  transition: 200ms;
+}
+
+.game-option:hover > p {
+  color: #AB49DA;
+  transition: 200ms;
+}
+
+.game-name {
+  margin: 10px;
+  margin-top: 0;
+  font-size: 140%;
+}
+
+.game-ruleset {
+  margin: 2px;
+}
+
+.weapon-options {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%;
-  height: 50%;
 }
 
 .pick-option {
@@ -65,9 +106,14 @@ aside {
   justify-content: flex-start;
   align-items: center;
   width: 15%;
-  background-color: #d07cf2;
+  background-color: #CD82F0;
 }
 
 .aside-text {
   margin: 2px;
+}
+
+/* hidden class */
+.hidden {
+  display: none;
 }
