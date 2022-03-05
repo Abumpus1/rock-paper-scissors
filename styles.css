@@ -157,6 +157,7 @@ aside {
 .change-game:hover {
   background: white;
   color: #AB49DA;
+  cursor: pointer;
   height: 75px;
   transition: 150ms;
   width: 170px;
