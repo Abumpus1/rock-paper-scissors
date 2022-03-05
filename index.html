@@ -14,9 +14,25 @@
     <main>
       <div class="title-container">
         <h1>Rock, Paper, Scissors</h1>
-        <h2>Choose your fighter!</h2>
+        <h2>Choose your game!</h2>
       </div>
-      <section class="rock-paper-scissors-container">
+      <section class="game-select">
+        <article class="classic">
+          <p class="game-name">🪨 CLASSIC ✂️</p>
+          <p class="game-ruleset">Rock > Scissors</p>
+          <p class="game-ruleset">Paper > Rock</p>
+          <p class="game-ruleset">Scissors > Paper</p>
+        </article>
+        <article class="hard">
+          <p class="game-name">🦎 DIFFICULT 👽</p>
+          <p class="game-ruleset">Rock > Scissors & Lizard</p>
+          <p class="game-ruleset">Paper > Rock & Alien</p>
+          <p class="game-ruleset">Scissors > Paper & Lizard</p>
+          <p class="game-ruleset">Lizard > Paper & Alien</p>
+          <p class="game-ruleset">Alien > Scissors & Rock</p>
+        </article>
+      </section>
+      <section class="rock-paper-scissors-container hidden">
         <img class="pick-option" id="rock" src="./src/happy-rocks.png" alt="Image of rock">
         <img class="pick-option" id="paper" src="./src/happy-paper.png" alt="Image of paper">
         <img class="pick-option" id="scissors" src="./src/happy-scissors.png" alt="Image of scissors">

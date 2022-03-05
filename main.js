@@ -15,17 +15,12 @@ optionsContainer.addEventListener('click', function(event) {
 // functions
 function clickWeapon(event) {
   if (event.target.className === "pick-option") {
-    chooseWeapon(event.target)
+    chooseWeapons(event.target)
   }
 }
 
-function chooseWeapon(clickedImage) {
+function chooseWeapons(clickedImage) {
   game.takeTurns(clickedImage.id);
   humanWins.innerText = `Wins: ${game.players.human.wins}`;
   computerWins.innerText = `Wins: ${game.players.computer.wins}`;
-  // for (var i = 0; i < pickOptions.length; i++) {
-  //   if (clickedImage.id === ) {
-  //
-  //   }
-  // }
 }
