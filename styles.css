@@ -72,7 +72,7 @@ main {
 
 .game-option:hover > p {
   color: #AB49DA;
-  transition: 250ms;
+  transition: 200ms;
 }
 
 .game-name {
@@ -85,12 +85,10 @@ main {
   margin: 2px;
 }
 
-.rock-paper-scissors-container {
+.weapon-options {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 85%;
-  height: 50%;
 }
 
 .pick-option {

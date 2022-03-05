@@ -31,9 +31,9 @@ class Game {
 
   decideWinner() {
     if (this.gameType === "classic") {
-      var gameRules = this.classicRules
+      var gameRules = this.classicRules;
     } else {
-      var gameRules = this.hardRules
+      var gameRules = this.hardRules;
     }
     var playerTurn = this.players.human.turn;
     var computerTurn = this.players.computer.turn;

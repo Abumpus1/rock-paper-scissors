@@ -3,19 +3,21 @@ var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
 
+var selectionDisplaysContainer = document.querySelector(".selection-displays-container")
 var gameSelectContainer = document.querySelector(".game-select-container");
-var optionsContainer = document.querySelector(".rock-paper-scissors-container");
+var rockPaperScissorsContainer = document.querySelector(".rock-paper-scissors-container");
+var lizardAlienContainer = document.querySelector(".lizard-alien-container");
 
-var game = new Game;
+var game = new Game();
 console.log(game);
 
 // event listeners
 gameSelectContainer.addEventListener("click", function(event) {
-  if (event.target.className === "game-option") {
-    chooseGame(event.target.id)
+  if (event.target.closest(".game-option")) {
+    chooseGame(event.target.closest(".game-option").id);
   }
 });
-optionsContainer.addEventListener("click", function(event) {
+selectionDisplaysContainer.addEventListener("click", function(event) {
   if (event.target.className === "pick-option") {
     chooseWeapons(event.target.id);
   }
@@ -33,7 +35,10 @@ function show(element) {
 function chooseGame(gameSelected) {
   game.gameType = gameSelected;
   hide(gameSelectContainer);
-  show(optionsContainer);
+  show(rockPaperScissorsContainer);
+  if (game.gameType === "hard") {
+    show(lizardAlienContainer);
+  }
 }
 
 function chooseWeapons(weapon) {
