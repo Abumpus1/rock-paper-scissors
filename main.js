@@ -7,6 +7,7 @@ var selectionDisplaysContainer = document.querySelector(".selection-displays-con
 var gameSelectContainer = document.querySelector(".game-select-container");
 var rockPaperScissorsContainer = document.querySelector(".rock-paper-scissors-container");
 var lizardAlienContainer = document.querySelector(".lizard-alien-container");
+var outcomeDisplay = document.querySelector(".outcome-display");
 
 var game = new Game();
 console.log(game);
@@ -45,4 +46,16 @@ function chooseWeapons(weapon) {
   game.takeTurns(weapon);
   humanWins.innerText = `Wins: ${game.players.human.wins}`;
   computerWins.innerText = `Wins: ${game.players.computer.wins}`;
+  showOutcome()
+}
+
+function showOutcome() {
+  hide(selectionDisplaysContainer);
+  show(outcomeDisplay);
+  setTimeout(reset, 3000);
+}
+
+function reset() {
+  hide(outcomeDisplay);
+  show(selectionDisplaysContainer);
 }
