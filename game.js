@@ -25,9 +25,9 @@ class Game {
   }
 
   takeTurns(weapon) {
-    this.players.human.takeTurn(weapon)
-    this.players.computer.takeRandomTurn(this.gameType)
-    this.decideWinner()
+    this.players.human.takeTurn(weapon);
+    this.players.computer.takeRandomTurn(this.gameType);
+    this.decideWinner();
   }
 
   decideWinner() {
@@ -40,16 +40,13 @@ class Game {
     var computerTurn = this.players.computer.turn;
     for (var i = 0; i < gameRules.length; i++) {
       if (playerTurn === computerTurn) {
-        this.outcome = "😭 It's a draw! 😭";
-        return;
+        return this.outcome = "😭 It's a draw! 😭";
       } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
-        this.outcome = "😃 Human won this round! 😃";
         this.players.human.wins++;
-        return;
+        return this.outcome = "😃 Human won this round! 😃";
       } else if (playerTurn === gameRules[i].name) {
-        this.outcome = "💻 Computer won this round! 💻";
         this.players.computer.wins++;
-        return;
+        return this.outcome = "💻 Computer won this round! 💻";
       }
     }
   }

@@ -56,8 +56,8 @@ function chooseWeapons(weapon) {
     game.takeTurns(weapon.id);
     humanWins.innerText = `Wins: ${game.players.human.wins}`;
     computerWins.innerText = `Wins: ${game.players.computer.wins}`;
-    showOutcome()
-  }, 300)
+    showOutcome();
+  }, 300);
 }
 
 function showOutcome() {
