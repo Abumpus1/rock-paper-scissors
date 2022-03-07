@@ -30,6 +30,11 @@ class Game {
     this.decideWinner();
   }
 
+  retrieveLocalWins() {
+    this.players.human.retrieveWinsFromStorage();
+    this.players.computer.retrieveWinsFromStorage();
+  }
+
   decideWinner() {
     if (this.gameType === "classic") {
       var gameRules = this.classicRules;
@@ -43,9 +48,11 @@ class Game {
         return this.outcome = "😭 It's a draw! 😭";
       } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
         this.players.human.wins++;
+        this.players.human.saveWinsToStorage();
         return this.outcome = "😃 Human won this round! 😃";
       } else if (playerTurn === gameRules[i].name) {
         this.players.computer.wins++;
+        this.players.computer.saveWinsToStorage();
         return this.outcome = "💻 Computer won this round! 💻";
       }
     }

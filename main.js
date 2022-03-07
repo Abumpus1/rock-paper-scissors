@@ -1,4 +1,4 @@
-// variables
+// query selectors
 var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
@@ -9,7 +9,10 @@ var gameSelectContainer = document.querySelector(".game-select-container");
 var rockPaperScissorsContainer = document.querySelector(".rock-paper-scissors-container");
 var lizardAlienContainer = document.querySelector(".lizard-alien-container");
 var outcomeDisplay = document.querySelector(".outcome-display");
+
+// on load
 var game = new Game();
+checkForWins();
 
 // event listeners
 gameSelectContainer.addEventListener("click", function(event) {
@@ -23,6 +26,11 @@ selectionDisplaysContainer.addEventListener("click", function(event) {
 changeGameButton.addEventListener("click", goToMain);
 
 // functions
+function checkForWins() {
+  game.retrieveLocalWins();
+  updateWins();
+}
+
 function hide(element) {
   element.classList.add("hidden");
 }
@@ -54,10 +62,14 @@ function chooseWeapons(weapon) {
   setTimeout(function() {
     weapon.classList.remove("clicked");
     game.takeTurns(weapon.id);
-    humanWins.innerText = `Wins: ${game.players.human.wins}`;
-    computerWins.innerText = `Wins: ${game.players.computer.wins}`;
+    updateWins();
     showOutcome();
   }, 300);
+}
+
+function updateWins() {
+  humanWins.innerText = `Wins: ${game.players.human.wins}`;
+  computerWins.innerText = `Wins: ${game.players.computer.wins}`;
 }
 
 function showOutcome() {

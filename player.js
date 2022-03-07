@@ -18,4 +18,12 @@ class Player {
     }
     this.turn = weapons[Math.floor(Math.random() * weapons.length)];
   }
+
+  saveWinsToStorage() {
+    window.localStorage.setItem(`${this.name} wins`, `${this.wins}`);
+  }
+
+  retrieveWinsFromStorage() {
+    this.wins = window.localStorage.getItem(`${this.name} wins`);
+  }
 }
