@@ -145,22 +145,22 @@ aside {
   margin: 2px;
 }
 
-.change-game {
+.change-game, .change-icon {
   background: #AB49DA;
   border: 0;
   font-size: 60%;
   height: 70px;
-  margin-top: 70px;
+  margin-top: 50px;
   width: 160px;
 }
 
-.change-game:hover {
+.change-game:hover, .change-icon:hover {
   background: white;
   color: #AB49DA;
   cursor: pointer;
-  height: 75px;
+  /* height: 75px; */
   transition: 150ms;
-  width: 170px;
+  width: 180px;
 }
 
 /* hidden class */
