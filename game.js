@@ -44,6 +44,13 @@ class Game {
     this.players.computer.retrieveWinsFromStorage();
   }
 
+  resetWins() {
+    this.players.human.wins = 0;
+    this.players.human.saveWinsToStorage();
+    this.players.computer.wins = 0;
+    this.players.computer.saveWinsToStorage();
+  }
+
   decideWinner() {
     if (this.gameType === "classic") {
       var gameRules = this.classicRules;

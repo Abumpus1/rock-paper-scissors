@@ -5,6 +5,7 @@ var pickOptions = document.querySelectorAll(".pick-option");
 var titleMessage = document.querySelector(".title-message");
 var humanToken = document.querySelector("#humanToken");
 var changeIconButton = document.querySelector(".change-icon");
+var resetScoreButton = document.querySelector(".reset-score");
 var changeGameButton = document.querySelector(".change-game");
 var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
 var gameSelectContainer = document.querySelector(".game-select-container");
@@ -27,10 +28,16 @@ selectionDisplaysContainer.addEventListener("click", function(event) {
   }});
 changeGameButton.addEventListener("click", goToMain);
 changeIconButton.addEventListener("click", chooseToken);
+resetScoreButton.addEventListener("click", resetScore);
 
 // functions
 function checkForWins() {
   game.retrieveLocalWins();
+  updateWins();
+}
+
+function resetScore() {
+  game.resetWins();
   updateWins();
 }
 
