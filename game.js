@@ -58,7 +58,7 @@ class Game {
       } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
         this.players.human.wins++;
         this.players.human.saveWinsToStorage();
-        return this.outcome = "😃 Human won this round! 😃";
+        return this.outcome = `${this.players.human.token} Human won this round! ${this.players.human.token}`;
       } else if (playerTurn === gameRules[i].name) {
         this.players.computer.wins++;
         this.players.computer.saveWinsToStorage();
