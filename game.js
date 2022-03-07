@@ -24,6 +24,16 @@ class Game {
     this.gameType = gameType;
   }
 
+  changeToken() {
+    var tokenOptions = ["😃", "👩", "👨", "👽"];
+    this.players.human.tokenNum++;
+    if (this.players.human.tokenNum > 3) {
+      this.players.human.tokenNum = 0;
+    }
+    this.players.human.token = tokenOptions[this.players.human.tokenNum];
+    console.log(this.players.human.token);
+  }
+
   takeTurns(weapon) {
     this.players.human.takeTurn(weapon);
     this.players.computer.takeRandomTurn(this.gameType);

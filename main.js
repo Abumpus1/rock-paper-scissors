@@ -25,7 +25,7 @@ selectionDisplaysContainer.addEventListener("click", function(event) {
     chooseWeapons(event.target);
   }});
 changeGameButton.addEventListener("click", goToMain);
-changeIconButton.addEventListener("click", changeToken);
+changeIconButton.addEventListener("click", chooseToken);
 
 // functions
 function checkForWins() {
@@ -41,14 +41,8 @@ function show(element) {
   element.classList.remove("hidden");
 }
 
-function changeToken() {
-  var tokenOptions = ["😃", "👩", "👨", "👽"];
-  game.players.human.tokenNum++
-  if (game.players.human.tokenNum > 3) {
-    game.players.human.tokenNum = 0;
-  }
-  game.players.human.token = tokenOptions[game.players.human.tokenNum];
-  console.log(game.players.human.token);
+function chooseToken() {
+  game.changeToken();
 }
 
 function goToMain() {
