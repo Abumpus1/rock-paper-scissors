@@ -3,6 +3,7 @@ var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
 var titleMessage = document.querySelector(".title-message");
+var humanToken = document.querySelector("#humanToken");
 var changeIconButton = document.querySelector(".change-icon");
 var changeGameButton = document.querySelector(".change-game");
 var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
@@ -43,6 +44,11 @@ function show(element) {
 
 function chooseToken() {
   game.changeToken();
+  updateToken();
+}
+
+function updateToken() {
+  humanToken.innerText = `${game.players.human.token}`;
 }
 
 function goToMain() {

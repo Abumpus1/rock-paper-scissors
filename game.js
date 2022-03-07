@@ -31,7 +31,6 @@ class Game {
       this.players.human.tokenNum = 0;
     }
     this.players.human.token = tokenOptions[this.players.human.tokenNum];
-    console.log(this.players.human.token);
   }
 
   takeTurns(weapon) {
