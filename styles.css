@@ -145,7 +145,7 @@ aside {
   margin: 2px;
 }
 
-.change-game, .change-icon {
+aside > button {
   background: #AB49DA;
   border: 0;
   font-size: 60%;
@@ -154,7 +154,7 @@ aside {
   width: 160px;
 }
 
-.change-game:hover, .change-icon:hover {
+aside > button:hover {
   background: white;
   color: #AB49DA;
   cursor: pointer;
