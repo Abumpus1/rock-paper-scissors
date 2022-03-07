@@ -136,7 +136,7 @@ aside {
   background-color: #CD82F0;
   display: flex;
   flex-direction: column;
-  font-size: 200%;
+  font-size: 160%;
   justify-content: flex-start;
   width: 15%;
 }
@@ -148,7 +148,7 @@ aside {
 aside > button {
   background: #AB49DA;
   border: 0;
-  font-size: 60%;
+  font-size: 70%;
   height: 70px;
   margin-top: 50px;
   width: 160px;
@@ -158,7 +158,6 @@ aside > button:hover {
   background: white;
   color: #AB49DA;
   cursor: pointer;
-  /* height: 75px; */
   transition: 150ms;
   width: 180px;
 }

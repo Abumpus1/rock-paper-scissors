@@ -33,12 +33,6 @@ class Game {
     this.players.human.token = tokenOptions[this.players.human.tokenNum];
   }
 
-  takeTurns(weapon) {
-    this.players.human.takeTurn(weapon);
-    this.players.computer.takeRandomTurn(this.gameType);
-    this.decideWinner();
-  }
-
   retrieveLocalWins() {
     this.players.human.retrieveWinsFromStorage();
     this.players.computer.retrieveWinsFromStorage();
@@ -49,6 +43,12 @@ class Game {
     this.players.human.saveWinsToStorage();
     this.players.computer.wins = 0;
     this.players.computer.saveWinsToStorage();
+  }
+
+  takeTurns(weapon) {
+    this.players.human.takeTurn(weapon);
+    this.players.computer.takeRandomTurn(this.gameType);
+    this.decideWinner();
   }
 
   decideWinner() {
