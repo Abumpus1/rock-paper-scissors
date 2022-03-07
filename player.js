@@ -2,6 +2,7 @@ class Player {
   constructor(playerName, token) {
     this.name = playerName;
     this.token = token;
+    this.tokenNum = 0;
     this.wins = 0;
     this.turn = null;
   }

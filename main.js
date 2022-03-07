@@ -3,6 +3,7 @@ var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
 var titleMessage = document.querySelector(".title-message");
+var changeIconButton = document.querySelector(".change-icon");
 var changeGameButton = document.querySelector(".change-game");
 var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
 var gameSelectContainer = document.querySelector(".game-select-container");
@@ -24,6 +25,7 @@ selectionDisplaysContainer.addEventListener("click", function(event) {
     chooseWeapons(event.target);
   }});
 changeGameButton.addEventListener("click", goToMain);
+changeIconButton.addEventListener("click", changeToken);
 
 // functions
 function checkForWins() {
@@ -37,6 +39,16 @@ function hide(element) {
 
 function show(element) {
   element.classList.remove("hidden");
+}
+
+function changeToken() {
+  var tokenOptions = ["😃", "👩", "👨", "👽"];
+  game.players.human.tokenNum++
+  if (game.players.human.tokenNum > 3) {
+    game.players.human.tokenNum = 0;
+  }
+  game.players.human.token = tokenOptions[game.players.human.tokenNum];
+  console.log(game.players.human.token);
 }
 
 function goToMain() {
