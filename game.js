@@ -4,19 +4,19 @@ class Game {
     this.outcome = "Placeholder";
     this.players = {
       human: new Player("human", "😀"),
-      computer: new Player("computer", "💻")
+      computer: new Player("computer", "🤖")
     };
     this.classicRules = [
-      {name: "rock", strongAgainst: ["scissors"]},
-      {name: "paper", strongAgainst: ["rock"]},
-      {name: "scissors", strongAgainst: ["paper"]}
+      {name: "wood", strongAgainst: ["water"]},
+      {name: "water", strongAgainst: ["fire"]},
+      {name: "fire", strongAgainst: ["wood"]}
     ];
     this.hardRules = [
-      {name: "rock", strongAgainst: ["scissors", "lizard"]},
-      {name: "paper", strongAgainst: ["rock", "alien"]},
-      {name: "scissors", strongAgainst: ["paper", "lizard"]},
-      {name: "lizard", strongAgainst: ["paper", "alien"]},
-      {name: "alien", strongAgainst: ["scissors", "rock"]}
+      {name: "wood", strongAgainst: ["water", "earth"]},
+      {name: "water", strongAgainst: ["fire", "metal"]},
+      {name: "fire", strongAgainst: ["metal", "wood"]},
+      {name: "metal", strongAgainst: ["wood", "earth"]},
+      {name: "earth", strongAgainst: ["water", "fire"]}
     ];
   }
 
@@ -61,7 +61,7 @@ class Game {
     var computerTurn = this.players.computer.turn;
     for (var i = 0; i < gameRules.length; i++) {
       if (playerTurn === computerTurn) {
-        return this.outcome = "😭 It's a draw! 😭";
+        return this.outcome = "🙃 It's a draw! 🙃";
       } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
         this.players.human.wins++;
         this.players.human.saveWinsToStorage();
@@ -69,7 +69,7 @@ class Game {
       } else if (playerTurn === gameRules[i].name) {
         this.players.computer.wins++;
         this.players.computer.saveWinsToStorage();
-        return this.outcome = "💻 Computer won this round! 💻";
+        return this.outcome = "🤖 Computer won this round! 🤖";
       }
     }
   }

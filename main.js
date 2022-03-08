@@ -9,8 +9,8 @@ var resetScoreButton = document.querySelector(".reset-score");
 var changeGameButton = document.querySelector(".change-game");
 var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
 var gameSelectContainer = document.querySelector(".game-select-container");
-var rockPaperScissorsContainer = document.querySelector(".rock-paper-scissors-container");
-var lizardAlienContainer = document.querySelector(".lizard-alien-container");
+var woodWaterFireContainer = document.querySelector(".wood-water-fire-container");
+var metalEarthContainer = document.querySelector(".metal-earth-container");
 var outcomeDisplay = document.querySelector(".outcome-display");
 
 // on load
@@ -59,8 +59,8 @@ function updateToken() {
 }
 
 function goToMain() {
-  hide(rockPaperScissorsContainer);
-  hide(lizardAlienContainer);
+  hide(woodWaterFireContainer);
+  hide(metalEarthContainer);
   hide(changeGameButton);
   show(gameSelectContainer);
   titleMessage.innerText = "Choose your game!";
@@ -69,9 +69,9 @@ function goToMain() {
 function chooseGame(gameSelected) {
   game.gameType = gameSelected;
   hide(gameSelectContainer);
-  show(rockPaperScissorsContainer);
+  show(woodWaterFireContainer);
   if (game.gameType === "hard") {
-    show(lizardAlienContainer);
+    show(metalEarthContainer);
   }
   titleMessage.innerText = "Choose your fighter!";
 }
@@ -81,6 +81,7 @@ function chooseWeapons(weapon) {
   setTimeout(function() {
     weapon.classList.remove("clicked");
     game.takeTurns(weapon.id);
+    hide(changeGameButton);
     updateWins();
     showOutcome();
   }, 300);
