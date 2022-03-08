@@ -1,15 +1,21 @@
-// variables
+// query selectors
 var humanWins = document.querySelector("#humanWins");
 var computerWins = document.querySelector("#computerWins");
 var pickOptions = document.querySelectorAll(".pick-option");
 var titleMessage = document.querySelector(".title-message");
+var humanToken = document.querySelector("#humanToken");
+var changeIconButton = document.querySelector(".change-icon");
+var resetScoreButton = document.querySelector(".reset-score");
 var changeGameButton = document.querySelector(".change-game");
 var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
 var gameSelectContainer = document.querySelector(".game-select-container");
 var rockPaperScissorsContainer = document.querySelector(".rock-paper-scissors-container");
 var lizardAlienContainer = document.querySelector(".lizard-alien-container");
 var outcomeDisplay = document.querySelector(".outcome-display");
+
+// on load
 var game = new Game();
+checkForWins();
 
 // event listeners
 gameSelectContainer.addEventListener("click", function(event) {
@@ -21,14 +27,35 @@ selectionDisplaysContainer.addEventListener("click", function(event) {
     chooseWeapons(event.target);
   }});
 changeGameButton.addEventListener("click", goToMain);
+changeIconButton.addEventListener("click", chooseToken);
+resetScoreButton.addEventListener("click", resetScore);
 
 // functions
+function checkForWins() {
+  game.retrieveLocalWins();
+  updateWins();
+}
+
+function resetScore() {
+  game.resetWins();
+  updateWins();
+}
+
 function hide(element) {
   element.classList.add("hidden");
 }
 
 function show(element) {
   element.classList.remove("hidden");
+}
+
+function chooseToken() {
+  game.changeToken();
+  updateToken();
+}
+
+function updateToken() {
+  humanToken.innerText = `${game.players.human.token}`;
 }
 
 function goToMain() {
@@ -54,10 +81,14 @@ function chooseWeapons(weapon) {
   setTimeout(function() {
     weapon.classList.remove("clicked");
     game.takeTurns(weapon.id);
-    humanWins.innerText = `Wins: ${game.players.human.wins}`;
-    computerWins.innerText = `Wins: ${game.players.computer.wins}`;
+    updateWins();
     showOutcome();
   }, 300);
+}
+
+function updateWins() {
+  humanWins.innerText = `Wins: ${game.players.human.wins}`;
+  computerWins.innerText = `Wins: ${game.players.computer.wins}`;
 }
 
 function showOutcome() {

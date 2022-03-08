@@ -24,6 +24,27 @@ class Game {
     this.gameType = gameType;
   }
 
+  changeToken() {
+    var tokenOptions = ["😃", "👩", "👨", "👽"];
+    this.players.human.tokenNum++;
+    if (this.players.human.tokenNum > 3) {
+      this.players.human.tokenNum = 0;
+    }
+    this.players.human.token = tokenOptions[this.players.human.tokenNum];
+  }
+
+  retrieveLocalWins() {
+    this.players.human.retrieveWinsFromStorage();
+    this.players.computer.retrieveWinsFromStorage();
+  }
+
+  resetWins() {
+    this.players.human.wins = 0;
+    this.players.human.saveWinsToStorage();
+    this.players.computer.wins = 0;
+    this.players.computer.saveWinsToStorage();
+  }
+
   takeTurns(weapon) {
     this.players.human.takeTurn(weapon);
     this.players.computer.takeRandomTurn(this.gameType);
@@ -43,9 +64,11 @@ class Game {
         return this.outcome = "😭 It's a draw! 😭";
       } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
         this.players.human.wins++;
-        return this.outcome = "😃 Human won this round! 😃";
+        this.players.human.saveWinsToStorage();
+        return this.outcome = `${this.players.human.token} Human won this round! ${this.players.human.token}`;
       } else if (playerTurn === gameRules[i].name) {
         this.players.computer.wins++;
+        this.players.computer.saveWinsToStorage();
         return this.outcome = "💻 Computer won this round! 💻";
       }
     }
