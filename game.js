@@ -7,16 +7,16 @@ class Game {
       computer: new Player("computer", "💻")
     };
     this.classicRules = [
-      {name: "rock", strongAgainst: ["scissors"]},
-      {name: "paper", strongAgainst: ["rock"]},
-      {name: "scissors", strongAgainst: ["paper"]}
+      {name: "wood", strongAgainst: ["water"]},
+      {name: "water", strongAgainst: ["fire"]},
+      {name: "fire", strongAgainst: ["wood"]}
     ];
     this.hardRules = [
-      {name: "rock", strongAgainst: ["scissors", "lizard"]},
-      {name: "paper", strongAgainst: ["rock", "alien"]},
-      {name: "scissors", strongAgainst: ["paper", "lizard"]},
-      {name: "lizard", strongAgainst: ["paper", "alien"]},
-      {name: "alien", strongAgainst: ["scissors", "rock"]}
+      {name: "wood", strongAgainst: ["water", "earth"]},
+      {name: "water", strongAgainst: ["fire", "metal"]},
+      {name: "fire", strongAgainst: ["metal", "wood"]},
+      {name: "metal", strongAgainst: ["wood", "earth"]},
+      {name: "earth", strongAgainst: ["water", "fire"]}
     ];
   }
 

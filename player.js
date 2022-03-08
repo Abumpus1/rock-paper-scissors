@@ -13,9 +13,9 @@ class Player {
 
   takeRandomTurn(gameType) {
     if (gameType === "classic") {
-      var weapons = ["rock", "paper", "scissors"];
+      var weapons = ["wood", "water", "fire"];
     } else {
-      var weapons = ["rock", "paper", "scissors", "lizard", "alien"];
+      var weapons = ["wood", "water", "fire", "metal", "earth"];
     }
     this.turn = weapons[Math.floor(Math.random() * weapons.length)];
   }
