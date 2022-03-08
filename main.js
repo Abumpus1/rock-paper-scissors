@@ -81,6 +81,7 @@ function chooseWeapons(weapon) {
   setTimeout(function() {
     weapon.classList.remove("clicked");
     game.takeTurns(weapon.id);
+    hide(changeGameButton);
     updateWins();
     showOutcome();
   }, 300);
