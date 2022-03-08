@@ -10,19 +10,21 @@ This solo project is a website that allows the user to play a variation of rock,
 
 ## Features
 - You are able to select either of two game modes, and after you make a selection, the outcome of the round will display briefly, showing who won, and both player's selections.
-- ![Choose Game](https://user-images.githubusercontent.com/3982238/157298795-19b41ef7-c713-44c5-8d3f-2535940d3f19.gif)
----
+
+![Choose Game](https://user-images.githubusercontent.com/3982238/157298795-19b41ef7-c713-44c5-8d3f-2535940d3f19.gif)
+
 - The wins will store locally, and there is a button to reset all wins if desired.
-- ![reset score](https://user-images.githubusercontent.com/3982238/157299600-cbf6e85f-3724-41ae-998c-d1467ba2250e.gif)
----
+
+![reset score](https://user-images.githubusercontent.com/3982238/157299600-cbf6e85f-3724-41ae-998c-d1467ba2250e.gif)
+
 - You are able to swap your icon between 4 options, and the one you choose will be the one displayed if you win.
-- ![change icon](https://user-images.githubusercontent.com/3982238/157300208-a54ac251-a84e-4a64-a9e2-31db25c1f98d.gif)
+
+![change icon](https://user-images.githubusercontent.com/3982238/157300208-a54ac251-a84e-4a64-a9e2-31db25c1f98d.gif)
 
 ## Set Up
 1. Fork this repo
 2. Clone this repo down to your local machine
 3. View this project in browser by typing `open index.html` into your terminal
-
 
 ## Project Specs
 The project spec can be found [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html), I had a week to complete this project.
