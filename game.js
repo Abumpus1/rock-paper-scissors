@@ -4,7 +4,7 @@ class Game {
     this.outcome = "Placeholder";
     this.players = {
       human: new Player("human", "😀"),
-      computer: new Player("computer", "💻")
+      computer: new Player("computer", "🤖")
     };
     this.classicRules = [
       {name: "wood", strongAgainst: ["water"]},
@@ -61,7 +61,7 @@ class Game {
     var computerTurn = this.players.computer.turn;
     for (var i = 0; i < gameRules.length; i++) {
       if (playerTurn === computerTurn) {
-        return this.outcome = "😭 It's a draw! 😭";
+        return this.outcome = "🙃 It's a draw! 🙃";
       } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
         this.players.human.wins++;
         this.players.human.saveWinsToStorage();
@@ -69,7 +69,7 @@ class Game {
       } else if (playerTurn === gameRules[i].name) {
         this.players.computer.wins++;
         this.players.computer.saveWinsToStorage();
-        return this.outcome = "💻 Computer won this round! 💻";
+        return this.outcome = "🤖 Computer won this round! 🤖";
       }
     }
   }
