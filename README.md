@@ -22,6 +22,7 @@ This solo project is a website that allows the user to play a variation of rock,
 ![change icon](https://user-images.githubusercontent.com/3982238/157300208-a54ac251-a84e-4a64-a9e2-31db25c1f98d.gif)
 
 ## Set Up
+You can either access the deploy link [here](https://abumpus1.github.io/rock-paper-scissors/), or...
 1. Fork this repo
 2. Clone this repo down to your local machine
 3. View this project in browser by typing `open index.html` into your terminal
