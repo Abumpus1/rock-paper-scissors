@@ -16,49 +16,29 @@ const outcomeDisplay = document.querySelector(".outcome-display");
 // on load
 const game = new Game();
 
-// event listeners
-window.addEventListener("load", checkForWins);
-gameSelectContainer.addEventListener("click", function(event) {
-  if (event.target.closest(".game-option")) {
-    chooseGame(event.target.closest(".game-option").id);
-  }});
-selectionDisplaysContainer.addEventListener("click", function(event) {
-  if (event.target.className === "pick-option") {
-    chooseWeapons(event.target);
-  }});
-changeGameButton.addEventListener("click", goToMain);
-changeIconButton.addEventListener("click", chooseToken);
-resetScoreButton.addEventListener("click", resetScore);
-
 // functions
-function checkForWins() {
+const checkForWins = () => {
   game.retrieveLocalWins();
   updateWins();
 }
 
-function resetScore() {
+const resetScore = () => {
   game.resetWins();
   updateWins();
 }
 
-function hide(element) {
-  element.classList.add("hidden");
-}
+const hide = element => element.classList.add("hidden");
 
-function show(element) {
-  element.classList.remove("hidden");
-}
+const show = element => element.classList.remove("hidden");
 
-function chooseToken() {
+const chooseToken = () => {
   game.changeToken();
   updateToken();
 }
 
-function updateToken() {
-  humanToken.innerText = `${game.players.human.token}`;
-}
+const updateToken = () => humanToken.innerText = `${game.players.human.token}`;
 
-function goToMain() {
+const goToMain = () => {
   hide(woodWaterFireContainer);
   hide(metalEarthContainer);
   hide(changeGameButton);
@@ -66,7 +46,7 @@ function goToMain() {
   titleMessage.innerText = "Choose your game!";
 }
 
-function chooseGame(gameSelected) {
+const chooseGame = (gameSelected) => {
   game.gameType = gameSelected;
   hide(gameSelectContainer);
   show(woodWaterFireContainer);
@@ -76,9 +56,9 @@ function chooseGame(gameSelected) {
   titleMessage.innerText = "Choose your fighter!";
 }
 
-function chooseWeapons(weapon) {
- weapon.classList.add("clicked");
-  setTimeout(function() {
+const chooseWeapons = (weapon) => {
+  weapon.classList.add("clicked");
+  setTimeout(() => {
     weapon.classList.remove("clicked");
     game.takeTurns(weapon.id);
     hide(changeGameButton);
@@ -87,17 +67,17 @@ function chooseWeapons(weapon) {
   }, 300);
 }
 
-function updateWins() {
+const updateWins = () => {
   humanWins.innerText = `Wins: ${game.players.human.wins}`;
   computerWins.innerText = `Wins: ${game.players.computer.wins}`;
 }
 
-function showOutcome() {
+const showOutcome = () => {
   hide(selectionDisplaysContainer);
   show(outcomeDisplay);
   titleMessage.innerText = game.outcome;
-  var playerTurn = game.players.human.turn;
-  var computerTurn = game.players.computer.turn;
+  let playerTurn = game.players.human.turn;
+  let computerTurn = game.players.computer.turn;
   outcomeDisplay.innerHTML = `
   <img class="display-option" id="${playerTurn}" src="./src/${playerTurn}.png" alt="image of ${playerTurn}">
   <img class="display-option" id="${computerTurn}" src="./src/${computerTurn}.png" alt="image of ${computerTurn}">
@@ -105,9 +85,23 @@ function showOutcome() {
   setTimeout(reset, 2000);
 }
 
-function reset() {
+const reset = () => {
   titleMessage.innerText = "Choose your fighter!";
   show(changeGameButton);
   hide(outcomeDisplay);
   show(selectionDisplaysContainer);
 }
+
+// event listeners
+window.addEventListener("load", checkForWins);
+gameSelectContainer.addEventListener("click", (event) => {
+  if (event.target.closest(".game-option")) {
+    chooseGame(event.target.closest(".game-option").id);
+  }});
+selectionDisplaysContainer.addEventListener("click", (event) => {
+  if (event.target.className === "pick-option") {
+    chooseWeapons(event.target);
+  }});
+changeGameButton.addEventListener("click", goToMain);
+changeIconButton.addEventListener("click", chooseToken);
+resetScoreButton.addEventListener("click", resetScore);
