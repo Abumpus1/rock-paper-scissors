@@ -28,7 +28,9 @@ You can either access the deploy link [here](https://abumpus1.github.io/rock-pap
 3. View this project in browser by typing `open index.html` into your terminal
 
 ## Project Specs
-The project spec can be found [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html), I had a week to complete this project.
+This was a school project, the project spec can be found [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html)
+
+I had a week to complete this project.
 
 ## Goals of the project
 ### Learning Goals
