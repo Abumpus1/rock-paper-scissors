@@ -1,20 +1,20 @@
 // query selectors
-var humanWins = document.querySelector("#humanWins");
-var computerWins = document.querySelector("#computerWins");
-var pickOptions = document.querySelectorAll(".pick-option");
-var titleMessage = document.querySelector(".title-message");
-var humanToken = document.querySelector("#humanToken");
-var changeIconButton = document.querySelector(".change-icon");
-var resetScoreButton = document.querySelector(".reset-score");
-var changeGameButton = document.querySelector(".change-game");
-var selectionDisplaysContainer = document.querySelector(".selection-displays-container");
-var gameSelectContainer = document.querySelector(".game-select-container");
-var woodWaterFireContainer = document.querySelector(".wood-water-fire-container");
-var metalEarthContainer = document.querySelector(".metal-earth-container");
-var outcomeDisplay = document.querySelector(".outcome-display");
+const humanWins = document.querySelector("#humanWins");
+const computerWins = document.querySelector("#computerWins");
+const pickOptions = document.querySelectorAll(".pick-option");
+const titleMessage = document.querySelector(".title-message");
+const humanToken = document.querySelector("#humanToken");
+const changeIconButton = document.querySelector(".change-icon");
+const resetScoreButton = document.querySelector(".reset-score");
+const changeGameButton = document.querySelector(".change-game");
+const selectionDisplaysContainer = document.querySelector(".selection-displays-container");
+const gameSelectContainer = document.querySelector(".game-select-container");
+const woodWaterFireContainer = document.querySelector(".wood-water-fire-container");
+const metalEarthContainer = document.querySelector(".metal-earth-container");
+const outcomeDisplay = document.querySelector(".outcome-display");
 
 // on load
-var game = new Game();
+const game = new Game();
 checkForWins();
 
 // event listeners
