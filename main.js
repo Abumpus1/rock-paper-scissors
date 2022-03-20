@@ -15,9 +15,9 @@ const outcomeDisplay = document.querySelector(".outcome-display");
 
 // on load
 const game = new Game();
-checkForWins();
 
 // event listeners
+window.addEventListener("load", checkForWins);
 gameSelectContainer.addEventListener("click", function(event) {
   if (event.target.closest(".game-option")) {
     chooseGame(event.target.closest(".game-option").id);
