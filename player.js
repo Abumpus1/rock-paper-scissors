@@ -13,11 +13,12 @@ class Player {
 
   takeRandomTurn(gameType) {
     if (gameType === "classic") {
-      var weapons = ["wood", "water", "fire"];
+      let weapons = ["wood", "water", "fire"];
+      this.turn = weapons[Math.floor(Math.random() * weapons.length)];
     } else {
-      var weapons = ["wood", "water", "fire", "metal", "earth"];
+      let weapons = ["wood", "water", "fire", "metal", "earth"];
+      this.turn = weapons[Math.floor(Math.random() * weapons.length)];
     }
-    this.turn = weapons[Math.floor(Math.random() * weapons.length)];
   }
 
   saveWinsToStorage() {
