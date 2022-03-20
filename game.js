@@ -25,7 +25,7 @@ class Game {
   }
 
   changeToken() {
-    var tokenOptions = ["😃", "👩", "👨", "👽"];
+    let tokenOptions = ["😃", "👩", "👨", "👽"];
     this.players.human.tokenNum++;
     if (this.players.human.tokenNum > 3) {
       this.players.human.tokenNum = 0;
@@ -57,8 +57,8 @@ class Game {
     } else {
       var gameRules = this.hardRules;
     }
-    var playerTurn = this.players.human.turn;
-    var computerTurn = this.players.computer.turn;
+    let playerTurn = this.players.human.turn;
+    let computerTurn = this.players.computer.turn;
     for (var i = 0; i < gameRules.length; i++) {
       if (playerTurn === computerTurn) {
         return this.outcome = "🙃 It's a draw! 🙃";
