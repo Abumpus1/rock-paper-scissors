@@ -25,7 +25,7 @@ class Game {
   }
 
   changeToken() {
-    let tokenOptions = ["😃", "👩", "👨", "👽"];
+    var tokenOptions = ["😃", "👩", "👨", "👽"];
     this.players.human.tokenNum++;
     if (this.players.human.tokenNum > 3) {
       this.players.human.tokenNum = 0;
@@ -48,35 +48,29 @@ class Game {
   takeTurns(weapon) {
     this.players.human.takeTurn(weapon);
     this.players.computer.takeRandomTurn(this.gameType);
-    this.verifyGameType();
+    this.decideWinner();
   }
 
-  verifyGameType() {
+  decideWinner() {
     if (this.gameType === "classic") {
-      let gameRules = this.classicRules;
-      this.decideWinner(gameRules);
+      var gameRules = this.classicRules;
     } else {
-      let gameRules = this.hardRules;
-      this.decideWinner(gameRules);
+      var gameRules = this.hardRules;
     }
-  }
-
-  decideWinner(gameRules) {
-    let playerTurn = this.players.human.turn;
-    let computerTurn = this.players.computer.turn;
-    if (playerTurn === computerTurn) {
-      return this.outcome = "🙃 It's a draw! 🙃";
-    }
-    gameRules.forEach((gameRule) => {
-      if (playerTurn === gameRule.name && gameRule.strongAgainst.includes(computerTurn)) {
+    var playerTurn = this.players.human.turn;
+    var computerTurn = this.players.computer.turn;
+    for (var i = 0; i < gameRules.length; i++) {
+      if (playerTurn === computerTurn) {
+        return this.outcome = "🙃 It's a draw! 🙃";
+      } else if (playerTurn === gameRules[i].name && gameRules[i].strongAgainst.includes(computerTurn)) {
         this.players.human.wins++;
         this.players.human.saveWinsToStorage();
         return this.outcome = `${this.players.human.token} Human won this round! ${this.players.human.token}`;
-      } else if (playerTurn === gameRule.name) {
+      } else if (playerTurn === gameRules[i].name) {
         this.players.computer.wins++;
         this.players.computer.saveWinsToStorage();
         return this.outcome = "🤖 Computer won this round! 🤖";
       }
-    });
+    }
   }
 }
